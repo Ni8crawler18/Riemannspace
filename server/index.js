@@ -13,6 +13,7 @@ const web3 = new Web3('http://127.0.0.1:8545');
 
 // Load the contract ABI and address from the correct file (Transaction.json)
 const contractABI = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../build/contracts/Transaction.json'), 'utf8')).abi;
+
 const contractAddress = '0x4f56cFd3724DB6ef58AC5043c5c49348e58b7d10'; // Replace with your deployed contract address
 
 // Instantiate the contract
