@@ -1,0 +1,6 @@
+node_modules/
+build/
+*.pyc
+server/powersoftau.ptau
+server/powersoftau_contribution.ptau
+server/circom
