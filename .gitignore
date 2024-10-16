@@ -1,5 +1,3 @@
 node_modules/
 build/
 *.pyc
-zksnark/powersoftau_0000.ptau
-zksnark/powersoftau_final.ptau
