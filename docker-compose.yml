@@ -1,0 +1,34 @@
+version: '3.8'
+
+services:
+  ganache:
+    image: trufflesuite/ganache-cli
+    ports:
+      - "8545:8545"
+    networks:
+      - blockchain
+    environment:
+      - ACCOUNT=0x3E108dEC42dB710131D3CCB81859568C2A475e4f,100
+      - ACCOUNT=0xe47Ab881149800B80f669d01f038BE2A4FdAc660,100
+      - ACCOUNT=0x512d4E40Ff78a9D03184e05b61d220929b6D1399,100
+      - ACCOUNT=0x03ff5aF323A1d167C35D1B0e7A18e504caa6cF18,100
+      - ACCOUNT=0x6936a62c3ba8dF383a7C9d7F575fae0a9b80c767,100
+      - ACCOUNT=0xD87Cfad85B1101e463Df4a3167ab6aEF6D0Cbf09,100
+      - ACCOUNT=0x4C74966Cde6605A1dBD2b40E112683dF7D976720,100
+      - ACCOUNT=0xF94Cf6DdBb3B04c9e4a97Ca30B51774eF8EFB224,100
+      - ACCOUNT=0xFDCc2745170000642F7B06de7b31ce53aC145d40,100
+      - ACCOUNT=0x777b30481f4966F2008C98a45752a357d49b1db5,100
+
+  app:
+    build: .
+    ports:
+      - "3000:3000"
+      - "3001:3001"
+    networks:
+      - blockchain
+    depends_on:
+      - ganache
+
+networks:
+  blockchain:
+    driver: bridge
